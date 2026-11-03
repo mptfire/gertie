@@ -754,7 +754,7 @@ mod tests {
     #[test]
     fn a_server_dumping_100kb_comes_home_capped() {
         let client = Arc::new(
-            McpClient::connect("big", "sh", &["-c".into(), BIG_SERVER.into()], &[])
+            McpClient::connect("big", "sh", &["-c".into(), BIG_SERVER.into()], &[], &[])
                 .expect("handshake"),
         );
         let tools = client.list_tools().expect("tools/list");
